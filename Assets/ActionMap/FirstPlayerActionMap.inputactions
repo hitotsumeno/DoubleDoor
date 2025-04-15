@@ -1,8 +1,8 @@
 {
-    "name": "PlayerActionMap",
+    "name": "FirstPlayerActionMap",
     "maps": [
         {
-            "name": "CharacterControls",
+            "name": "Player1Controls",
             "id": "5144a018-6e5f-459c-bbd3-f70b3f625799",
             "actions": [
                 {
@@ -94,7 +94,7 @@
             ]
         },
         {
-            "name": "UI",
+            "name": "Player1UI",
             "id": "12ce3c20-56dd-4eb3-9e1e-caf25000a6e4",
             "actions": [
                 {

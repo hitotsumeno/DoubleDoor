@@ -1,22 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "InputReader")]
-public class InputReaderScript : ScriptableObject, PlayerActionMap.ICharacterControlsActions, PlayerActionMap.IUIActions
+[CreateAssetMenu(menuName = "Player2InputReader")]
+public class SecondPlayerInputReaderScript : ScriptableObject, SecondPlayerActionMap.IPlayer2ControlsActions, SecondPlayerActionMap.IPlayer2UIActions
 {
-    private PlayerActionMap _playerInput;
+    private SecondPlayerActionMap _secondPlayerInput;
 
     private void OnEnable()
     {
-        if(_playerInput == null)
+        if (_secondPlayerInput == null)
         {
-            _playerInput = new PlayerActionMap();
+            _secondPlayerInput = new SecondPlayerActionMap();
 
-            _playerInput.CharacterControls.SetCallbacks(this);
-            _playerInput.UI.SetCallbacks(this);
+            _secondPlayerInput.Player2Controls.SetCallbacks(this);
+            _secondPlayerInput.Player2UI.SetCallbacks(this);
         }
     }
 
@@ -27,19 +25,19 @@ public class InputReaderScript : ScriptableObject, PlayerActionMap.ICharacterCon
 
     public void DisableAllInput()
     {
-        _playerInput.CharacterControls.Disable();
-        _playerInput.UI.Disable();
+        _secondPlayerInput.Player2Controls.Disable();
+        _secondPlayerInput.Player2UI.Disable();
     }
 
     public void EnablePlayerInput()
     {
-        _playerInput.CharacterControls.Enable();
-        _playerInput.UI.Disable();
+        _secondPlayerInput.Player2Controls.Enable();
+        _secondPlayerInput.Player2UI.Disable();
     }
     public void EnableUIInput()
     {
-        _playerInput.CharacterControls.Disable();
-        _playerInput.UI.Enable();
+        _secondPlayerInput.Player2Controls.Disable();
+        _secondPlayerInput.Player2UI.Enable();
     }
 
     //Gameplay Events
